@@ -12,10 +12,10 @@
     <setting propertyKey="@Properties.save" title="@Strings.saveFit">
         <settingConfig type="boolean"/>
     </setting>
-    <setting propertyKey="@Properties.lastSuccesfulSport" title="@Strings.sport">
+    <setting propertyKey="@Properties.lastSuccesfulSport" title="@Strings.lastSuccessfulSport">
         <settingConfig type="numeric" readonly="true"/>
     </setting>
-    <setting propertyKey="@Properties.lastSuccesfulSubSport" title="@Strings.subSport">
+    <setting propertyKey="@Properties.lastSuccesfulSubSport" title="@Strings.lastSuccessfulSubSport">
         <settingConfig type="numeric" readonly="true"/>
     </setting>
 </settings>

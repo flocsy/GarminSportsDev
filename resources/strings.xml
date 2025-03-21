@@ -6,4 +6,8 @@
     <string id="empty">empty</string>
 
     <string id="saveFit">Save fit sessions</string>
+
+    <string id="lastSuccessfulSport">Last Successful Sport</string>
+    <string id="lastSuccessfulSubSport">Last Successful Sub Sport</string>
+
 </strings>
