@@ -8,6 +8,10 @@ Garmin Sports Dev is for CIQ developers to tinker with the SPORTS and SUB_SPORTS
 
 Garmin Sports Dev is for CIQ developers to tinker with the SPORTS and SUB_SPORTS values for saving activities in FIT file.
 
+You can start/stop the activities with the start/stop button or the touch of the screen. Each activity records a short session. Depending on the settings it'll also save it as a FIT file so you'll be able to see it in Garmin Connect.
+
+Using the up/down buttons you can change the "speed" by which it automatically finishes activities and changes to the next one.
+
 
 If you like the DF you can thank me by sending a beer: https://paypal.me/GavrielF
 
