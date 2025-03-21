@@ -1,0 +1,21 @@
+<settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
+    <setting propertyKey="@Properties.sport" title="@Strings.sport">
+        <settingConfig type="numeric"/>
+    </setting>
+    <setting propertyKey="@Properties.subSport" title="@Strings.subSport">
+        <settingConfig type="numeric"/>
+    </setting>
+
+    <setting propertyKey="@Properties.crashed" title="crashed">
+        <settingConfig type="boolean" readonly="true"/>
+    </setting>
+    <setting propertyKey="@Properties.save" title="@Strings.saveFit">
+        <settingConfig type="boolean"/>
+    </setting>
+    <setting propertyKey="@Properties.lastSuccesfulSport" title="@Strings.sport">
+        <settingConfig type="numeric" readonly="true"/>
+    </setting>
+    <setting propertyKey="@Properties.lastSuccesfulSubSport" title="@Strings.subSport">
+        <settingConfig type="numeric" readonly="true"/>
+    </setting>
+</settings>

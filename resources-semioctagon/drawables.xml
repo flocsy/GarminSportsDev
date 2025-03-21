@@ -1,0 +1,7 @@
+<drawables xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
+    <drawable-list id="stop">
+        <shape type="rectangle" x="0" y="0" width="101%" height="101%" border_width="6" border_color="Graphics.COLOR_RED" color="Graphics.COLOR_TRANSPARENT" />
+        <shape type="circle" x="center" y="center" radius="57%" border_width="8" border_color="Graphics.COLOR_RED" color="Graphics.COLOR_TRANSPARENT" />
+        <shape type="rectangle" x="35%" y="35%" width="30%" height="30%" border_width="4" border_color="Graphics.COLOR_RED" color="Graphics.COLOR_TRANSPARENT" />
+    </drawable-list>
+</drawables>

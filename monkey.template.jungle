@@ -1,0 +1,14 @@
+# project.manifest = manifest-prod.xml # prod
+project.manifest = manifest.xml # beta
+
+project.typecheck = 3
+project.optimization = 3z
+
+monkey_generator_feature_properties_has = getValue
+monkey_generator_feature_properties_min_ciq = 2.4.0
+
+monkey_generator_register = resources;source;features
+
+base.sourcePath = source
+base.resourcePath = resources
+base.excludeAnnotations = base;exclude;testing

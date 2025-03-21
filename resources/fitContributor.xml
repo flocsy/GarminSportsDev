@@ -1,0 +1,18 @@
+<fitContributions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
+    <fitField id="0"
+		displayInChart="false"
+		displayInActivityLaps="false"
+		displayInActivitySummary="true"
+		sortOrder="0"
+		dataLabel="@Strings.sport"
+		unitLabel="@Strings.empty"
+		precision="0" />
+    <fitField id="1"
+		displayInChart="false"
+		displayInActivityLaps="false"
+		displayInActivitySummary="true"
+		sortOrder="1"
+		dataLabel="@Strings.subSport"
+		unitLabel="@Strings.empty"
+		precision="0" />
+</fitContributions>

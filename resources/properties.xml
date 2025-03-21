@@ -1,0 +1,8 @@
+<properties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
+    <property id="save" type="boolean">false</property>
+    <property id="sport" type="number">0</property>
+    <property id="subSport" type="number">0</property>
+    <property id="crashed" type="boolean">false</property>
+    <property id="lastSuccesfulSport" type="number">0</property>
+    <property id="lastSuccesfulSubSport" type="number">0</property>
+</properties>
