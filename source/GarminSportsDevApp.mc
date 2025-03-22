@@ -29,9 +29,10 @@ class GarminSportsDevApp extends Application.AppBase {
 
     function onStart(state as Dictionary?) as Void {
         log("onStart");
-        self.crashed = getConfigBoolean("crashed");
+        self.crashed = getStorageBoolean("crashed");
         readConfig();
         if (self.crashed) {
+            log("crashed => nextSport");
             nextSport();
         }
     }
@@ -39,13 +40,13 @@ class GarminSportsDevApp extends Application.AppBase {
     function readConfig() as Void {
         log("readConfig");
         self.loop = false;
-        self.sport = getConfigNumber("sport");
-        self.subSport = getConfigNumber("subSport");
+        self.sport = getStorageNumber("sport");
+        self.subSport = getStorageNumber("subSport");
         self.save = getConfigBoolean("save");
         log(
-            "lastSuccesfulSport: " + getConfigNumber("lastSuccesfulSport") +
-            ", lastSuccesfulSubSport: " + getConfigNumber("lastSuccesfulSubSport") +
-            ", sport: " + self.sport + ", subSport: " + self.subSport + ", crashed: " + getConfigBoolean("crashed")
+            "lastSuccesfulSport: " + getStorageNumber("lastSuccesfulSport") +
+            ", lastSuccesfulSubSport: " + getStorageNumber("lastSuccesfulSubSport") +
+            ", sport: " + self.sport + ", subSport: " + self.subSport + ", crashed: " + getStorageBoolean("crashed")
         );
     }
 
@@ -53,7 +54,9 @@ class GarminSportsDevApp extends Application.AppBase {
         log("onSettingsChanged");
         readConfig();
         self.crashed = false;
-        setConfig("crashed", false);
+        setStorage("sport", self.sport);
+        setStorage("subSport", self.subSport);
+        setStorage("crashed", false);
         self.loop = false;
         WatchUi.requestUpdate();
     }
@@ -68,10 +71,12 @@ class GarminSportsDevApp extends Application.AppBase {
         var sport = self.sport;
         var subSport = self.subSport;
         if (self.crashed) {
+            log("nextSport: crashed => MAX_SUB_SPORT");
             subSport = MAX_SUB_SPORT;
         }
         subSport += 1;
         if (subSport > MAX_SUB_SPORT) {
+            log("nextSport: next SPORT");
             sport++;
             subSport = 0;
         }
@@ -79,6 +84,8 @@ class GarminSportsDevApp extends Application.AppBase {
         self.subSport = subSport;
         setConfig("sport", sport);
         setConfig("subSport", subSport);
+        setStorage("sport", sport);
+        setStorage("subSport", subSport);
         if (sport > MAX_SPORT) {
             loop = false;
             WatchUi.pushView(new FinishedView(), null, WatchUi.SLIDE_RIGHT);
@@ -93,7 +100,10 @@ class GarminSportsDevApp extends Application.AppBase {
         var name = getSportName(sport, subSport);
         log("startSession: sport: " + sport.format("%3d") + ", subSport: " + subSport.format("%3d") + ": " + name);
         setConfig("crashed", true);
-        // saveProperties();
+        setStorage("crashed", true);
+        if (AppBase has :saveProperties) {
+            AppBase.saveProperties();
+        }
         var session = ActivityRecording.createSession({
             :name => "" + sport + ":" + subSport + " " + name,
             :sport => sport as Activity.Sport,
@@ -122,7 +132,7 @@ class GarminSportsDevApp extends Application.AppBase {
     }
 
     function stopSession() as Void {
-        log("stopSession");
+        // log("stopSession");
         var session = self.session;
         if (session != null) {
             session.stop();
@@ -134,8 +144,9 @@ class GarminSportsDevApp extends Application.AppBase {
             self.session = null;
             self.crashed = false;
             setConfig("crashed", false);
-            setConfig("lastSuccesfulSport", self.sport);
-            setConfig("lastSuccesfulSubSport", self.subSport);
+            setStorage("crashed", false);
+            setStorage("lastSuccesfulSport", self.sport);
+            setStorage("lastSuccesfulSubSport", self.subSport);
             nextSport();
         }
         if (exit) {

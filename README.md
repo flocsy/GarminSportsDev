@@ -18,7 +18,7 @@ If you like the DF you can thank me by sending a beer: https://paypal.me/Gavriel
 
 ## Screenshots
 
-<img src="images/screenshot-1.png" height="372">
+<img src="images/screenshot-1.png" height="240">
 
 ## Changelog
 

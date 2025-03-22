@@ -1,5 +1,6 @@
 import Toybox.Application;
 import Toybox.Application.Properties;
+import Toybox.Application.Storage;
 import Toybox.Lang;
 
 (:no_properties, :no_ciq_2_4_0, :inline) // NOTE: forbidden to set properties in background
@@ -48,4 +49,27 @@ function getConfigBoolean(key as String) as Boolean {
 
 function ifNullThenZero(val as Number or Float or Null) as Number or Float {
     return val != null ? val : 0;
+}
+
+(:no_properties, :no_ciq_2_4_0, :inline)
+function setStorage(key as PropertyKeyType, val as PropertyValueType) as Void {
+    setConfig(key, val);
+}
+(:properties, :ciq_2_4_0, :inline)
+function setStorage(key as PropertyKeyType, val as PropertyValueType) as Void {
+    Storage.setValue(key, val);
+}
+(:no_properties, :no_ciq_2_4_0, :inline)
+function getStorage(key as PropertyKeyType) as PropertyValueType or Null {
+    return getConfig(key);
+}
+(:properties, :ciq_2_4_0, :inline)
+function getStorage(key as PropertyKeyType) as PropertyValueType or Null {
+    return Storage.getValue(key);
+}
+function getStorageNumber(key as String) as Number {
+    return ifNullThenZero(getStorage(key) as Number?) as Number;
+}
+function getStorageBoolean(key as String) as Boolean {
+    return getStorage(key) as Boolean == true;
 }

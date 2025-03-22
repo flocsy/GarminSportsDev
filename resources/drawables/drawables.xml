@@ -1,3 +1,10 @@
 <drawables xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
-    <bitmap id="LauncherIcon" filename="garmin-sports.png" dithering="none" />
+    <!--bitmap id="LauncherIcon" filename="garmin-sports.png" dithering="none" /-->
+    <bitmap id="LauncherIcon" filename="sports.svg" dithering="none"/>
+    <bitmap id="sports" filename="sports.svg" dithering="none" automaticPalette="false" scaleX="25%" scaleY="25%">
+        <palette disableTransparency="false">
+            <color>000000</color>
+            <color>FFFFFF</color>
+        </palette>
+    </bitmap>
 </drawables>
