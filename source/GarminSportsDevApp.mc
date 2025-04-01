@@ -53,6 +53,8 @@ class GarminSportsDevApp extends Application.AppBase {
     function onSettingsChanged() as Void {
         log("onSettingsChanged");
         readConfig();
+        self.sport = getConfigNumber("sport");
+        self.subSport = getConfigNumber("subSport");
         self.crashed = false;
         setStorage("sport", self.sport);
         setStorage("subSport", self.subSport);
@@ -109,11 +111,11 @@ class GarminSportsDevApp extends Application.AppBase {
             :sport => sport as Activity.Sport,
             :subSport => subSport as Activity.SubSport,
         });
+        session.start();
         session.createField("sport", 0, FitContributor.DATA_TYPE_UINT8, {:mesgType => FitContributor.MESG_TYPE_SESSION, :units => ""})
             .setData(sport);
         session.createField("subSport", 1, FitContributor.DATA_TYPE_UINT8, {:mesgType => FitContributor.MESG_TYPE_SESSION, :units => ""})
             .setData(subSport);
-        session.start();
         self.session = session;
         // if (Activity has :getProfileInfo) {
         //     var profileInfo = Activity.getProfileInfo();
@@ -187,6 +189,7 @@ class GarminSportsDevApp extends Application.AppBase {
     function setSpeed(speedIdx as Number) as Void {
         self.speedIdx = speedIdx;
         self.speedMs = 32 << speedIdx;
+        WatchUi.requestUpdate();
         log("setSpeed: " + speedIdx + " => " + self.speedMs + "ms");
     }
 
