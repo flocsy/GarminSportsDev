@@ -20,6 +20,8 @@ class GarminSportsDevApp extends Application.AppBase {
     var sport as Number = 0;
     var subSport as Number = 0;
     var crashed as Boolean = false;
+    var sportField as Field?;
+    var subSportField as Field?;
 
     function initialize() {
         AppBase.initialize();
@@ -111,11 +113,11 @@ class GarminSportsDevApp extends Application.AppBase {
             :sport => sport as Activity.Sport,
             :subSport => subSport as Activity.SubSport,
         });
+        sportField = session.createField("sport", 0, FitContributor.DATA_TYPE_UINT8, {:mesgType => FitContributor.MESG_TYPE_SESSION, :units => ""});
+        sportField.setData(sport);
+        subSportField = session.createField("subSport", 1, FitContributor.DATA_TYPE_UINT8, {:mesgType => FitContributor.MESG_TYPE_SESSION, :units => ""});
+        subSportField.setData(subSport);
         session.start();
-        session.createField("sport", 0, FitContributor.DATA_TYPE_UINT8, {:mesgType => FitContributor.MESG_TYPE_SESSION, :units => ""})
-            .setData(sport);
-        session.createField("subSport", 1, FitContributor.DATA_TYPE_UINT8, {:mesgType => FitContributor.MESG_TYPE_SESSION, :units => ""})
-            .setData(subSport);
         self.session = session;
         // if (Activity has :getProfileInfo) {
         //     var profileInfo = Activity.getProfileInfo();
