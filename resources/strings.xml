@@ -3,7 +3,7 @@
 
     <string id="sport">Sport</string>
     <string id="subSport">Sub Sport</string>
-    <string id="empty">empty</string>
+    <string id="empty" translatable="false"></string>
 
     <string id="saveFit">Save fit sessions</string>
 
