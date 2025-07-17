@@ -1,4 +1,4 @@
-# GENERATED from 'monkey.template.jungle' by https://github.com/flocsy/garmin-dev-tools/tree/main/monkey-generator/ ©2022-2025 by flocsy
+# GENERATED from 'monkey.template.jungle' by https://github.com/flocsy/garmin-dev-tools/tree/main/monkey-generator/ © by flocsy
 
 ## project.manifest = manifest-prod.xml # prod
 project.manifest = manifest.xml # beta
@@ -18,7 +18,7 @@ project.optimization = 3z
 # GENERATED #
 # excluded 0 devices that are incompatible and are not in manifest.xml: 
 # filtered out 0 incompatible devices by constraints from manifest.xml: 
-# included 143 devices
+# included 149 devices
 
 base.sourcePath=source
 base.resourcePath=resources
@@ -59,6 +59,7 @@ edge_1000.excludeAnnotations=$(edge_1000.excludeAnnotations);no_beta;no_properti
 edge_520.excludeAnnotations=$(edge_520.excludeAnnotations);no_beta;no_properties
 edgeexplore.excludeAnnotations=$(edgeexplore.excludeAnnotations);no_beta;no_properties
 edgeexplore2.excludeAnnotations=$(edgeexplore2.excludeAnnotations);no_beta;no_properties
+edgemtb.excludeAnnotations=$(edgemtb.excludeAnnotations);no_beta;no_properties
 enduro.excludeAnnotations=$(enduro.excludeAnnotations);no_beta;no_properties
 enduro3.excludeAnnotations=$(enduro3.excludeAnnotations);no_beta;no_properties
 epix2.excludeAnnotations=$(epix2.excludeAnnotations);no_beta;no_properties
@@ -105,6 +106,8 @@ fr255sm.excludeAnnotations=$(fr255sm.excludeAnnotations);no_beta;no_properties
 fr265.excludeAnnotations=$(fr265.excludeAnnotations);no_beta;no_properties
 fr265s.excludeAnnotations=$(fr265s.excludeAnnotations);no_beta;no_properties
 fr55.excludeAnnotations=$(fr55.excludeAnnotations);no_beta;no_properties
+fr57042mm.excludeAnnotations=$(fr57042mm.excludeAnnotations);no_beta;no_properties
+fr57047mm.excludeAnnotations=$(fr57047mm.excludeAnnotations);no_beta;no_properties
 fr630.excludeAnnotations=$(fr630.excludeAnnotations);no_beta;properties
 fr645.excludeAnnotations=$(fr645.excludeAnnotations);no_beta;no_properties
 fr645m.excludeAnnotations=$(fr645m.excludeAnnotations);no_beta;no_properties
@@ -116,6 +119,7 @@ fr945.excludeAnnotations=$(fr945.excludeAnnotations);no_beta;no_properties
 fr945lte.excludeAnnotations=$(fr945lte.excludeAnnotations);no_beta;no_properties
 fr955.excludeAnnotations=$(fr955.excludeAnnotations);no_beta;no_properties
 fr965.excludeAnnotations=$(fr965.excludeAnnotations);no_beta;no_properties
+fr970.excludeAnnotations=$(fr970.excludeAnnotations);no_beta;no_properties
 gpsmap66.excludeAnnotations=$(gpsmap66.excludeAnnotations);no_beta;no_properties
 gpsmap67.excludeAnnotations=$(gpsmap67.excludeAnnotations);no_beta;no_properties
 gpsmap86.excludeAnnotations=$(gpsmap86.excludeAnnotations);no_beta;no_properties
@@ -157,6 +161,7 @@ venusq.excludeAnnotations=$(venusq.excludeAnnotations);no_beta;no_properties
 venusq2.excludeAnnotations=$(venusq2.excludeAnnotations);no_beta;no_properties
 venusq2m.excludeAnnotations=$(venusq2m.excludeAnnotations);no_beta;no_properties
 venusqm.excludeAnnotations=$(venusqm.excludeAnnotations);no_beta;no_properties
+venux1.excludeAnnotations=$(venux1.excludeAnnotations);no_beta;no_properties
 vivoactive.excludeAnnotations=$(vivoactive.excludeAnnotations);no_beta;properties
 vivoactive3.excludeAnnotations=$(vivoactive3.excludeAnnotations);no_beta;no_properties
 vivoactive3d.excludeAnnotations=$(vivoactive3d.excludeAnnotations);no_beta;no_properties
@@ -165,4 +170,5 @@ vivoactive3mlte.excludeAnnotations=$(vivoactive3mlte.excludeAnnotations);no_beta
 vivoactive4.excludeAnnotations=$(vivoactive4.excludeAnnotations);no_beta;no_properties
 vivoactive4s.excludeAnnotations=$(vivoactive4s.excludeAnnotations);no_beta;no_properties
 vivoactive5.excludeAnnotations=$(vivoactive5.excludeAnnotations);no_beta;no_properties
+vivoactive6.excludeAnnotations=$(vivoactive6.excludeAnnotations);no_beta;no_properties
 vivoactive_hr.excludeAnnotations=$(vivoactive_hr.excludeAnnotations);no_beta;no_properties

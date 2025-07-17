@@ -22,4 +22,12 @@ If you like the DF you can thank me by sending a beer: https://paypal.me/Gavriel
 
 ## Changelog
 
-1.0 (2025-03-21) initial release
+1.4 (2025-07-17) add edgemtb, fr570, fr970, venux1, vivoactive6
+
+1.3 - fix session fit fields
+
+1.2 - change sport, subSport from GCM settings, set session fields after start
+
+1.1 - use storage
+
+1.0 (2025-03-21) initial version
